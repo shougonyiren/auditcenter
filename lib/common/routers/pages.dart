@@ -1,3 +1,5 @@
+import 'package:auditcenter/pages/home/bindings.dart';
+import 'package:auditcenter/pages/home/view.dart';
 import 'package:flutter/material.dart';
 import 'package:auditcenter/common/middlewares/middlewares.dart';
 import 'package:auditcenter/pages/application/index.dart';
@@ -11,10 +13,20 @@ import 'routes.dart';
 
 class AppPages {
   static const INITIAL = AppRoutes.INITIAL;
+  static const Home = AppRoutes.Home;
   static final RouteObserver<Route> observer = RouteObservers();
   static List<String> history = [];
 
   static final List<GetPage> routes = [
+    // 首页
+    GetPage(
+      name: AppRoutes.Home,
+      page: () => HomePage(),
+      binding:HomeBinding(),
+      middlewares: [
+        //RouteWelcomeMiddleware(priority: 1),
+      ],
+    ),
     // 免登陆
     GetPage(
       name: AppRoutes.INITIAL,

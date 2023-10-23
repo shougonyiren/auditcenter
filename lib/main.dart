@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-      designSize: Size(600, 1080),
+      designSize: Size(1440, 900),
       builder: () => RefreshConfiguration(
         headerBuilder: () => ClassicHeader(),
         footerBuilder: () => ClassicFooter(),
@@ -32,7 +32,7 @@ class MyApp extends StatelessWidget {
           title: 'AuditCenter',
           theme: AppTheme.light,
           debugShowCheckedModeBanner: false,
-          initialRoute: AppPages.INITIAL,
+          initialRoute: AppPages.Home,
           getPages: AppPages.routes,
           builder: EasyLoading.init(),
           translations: TranslationService(),
@@ -44,7 +44,7 @@ class MyApp extends StatelessWidget {
           ],
           supportedLocales: ConfigStore.to.languages,
           locale: ConfigStore.to.locale,
-          fallbackLocale: Locale('en', 'US'),
+          fallbackLocale: Locale('zh', 'CN'),//Locale('en', 'US'),
           enableLog: true,
           logWriterCallback: Logger.write,
         ),
